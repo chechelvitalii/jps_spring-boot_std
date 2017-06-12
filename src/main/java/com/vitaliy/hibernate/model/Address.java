@@ -1,6 +1,8 @@
 package com.vitaliy.hibernate.model;
 
 import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -8,6 +10,8 @@ import javax.persistence.*;
 @Entity
 @Table
 @Builder
+@Getter
+@Setter
 @ToString(exclude = "user")
 public class Address {
     @Id
