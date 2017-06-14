@@ -26,7 +26,7 @@ import static org.junit.Assert.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
-public class UserRepositoryIT  extends DBTestCase { //TODO http://devcolibri.com/3575
+public class UserRepositoryIT  {
 
     @Autowired
     private UserRepository userRepository;

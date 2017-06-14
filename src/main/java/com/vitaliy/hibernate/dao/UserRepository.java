@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.EntityManager;
-import javax.transaction.Transactional;
+import java.util.List;
 
 @Component
 public class UserRepository {
@@ -14,5 +14,11 @@ public class UserRepository {
 
     public void saveUser(User user) {
         entityManager.persist(user);
+    }
+
+    public List<User> finAll() {
+        return entityManager
+                .createNativeQuery("Select * From user ")
+                .getResultList();
     }
 }

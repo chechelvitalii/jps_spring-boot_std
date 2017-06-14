@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <STATIC_RESOURCE ID="1" NAME="Petr" SURNAME="Petrov"/>
+    <STATIC_RESOURCE ID="2" NAME="Ivan" SURNAME="Ivanov"/>
+    <STATIC_RESOURCE ID="3" NAME="Andrey" SURNAME="Andreyev"/>
+</dataset>
