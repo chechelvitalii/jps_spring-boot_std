@@ -6,6 +6,7 @@ import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.DatabaseTearDown;
 import com.vitaliy.hibernate.HibernateApplication;
 import com.vitaliy.hibernate.model.User;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
+import static org.junit.Assert.assertFalse;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = HibernateApplication.class) //TODO resolve how to set up test config here ?
@@ -44,6 +46,7 @@ public class UserRepositoryWithDbUnotIT {
         List<User> allUsers = userRepository.finAll();
         //THEN
         assertThat(allUsers, hasSize(3));
+        allUsers.stream().forEach(user -> assertFalse(user.getAddresses().isEmpty()));
     }
 
 }

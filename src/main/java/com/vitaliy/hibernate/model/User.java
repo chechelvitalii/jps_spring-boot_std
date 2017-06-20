@@ -1,13 +1,17 @@
 package com.vitaliy.hibernate.model;
 
-import lombok.EqualsAndHashCode;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
-import javax.persistence.*;
-import java.util.List;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -17,12 +21,12 @@ import java.util.Set;
 public class User {
     @Id
     @Column(unique = true)
-    private Integer id;
+    private Integer inn;
     @Column
     private String name;
     @Column
     private String surname;
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,orphanRemoval = true)
     private Set<Address> addresses;
 
     public void removeAddress(Address address) {

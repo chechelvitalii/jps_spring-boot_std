@@ -2,24 +2,22 @@ package com.vitaliy.hibernate.dao;
 
 import com.vitaliy.hibernate.model.Address;
 import com.vitaliy.hibernate.model.User;
+
 import org.assertj.core.util.Sets;
-import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
-import javax.transaction.Transactional;
-import java.util.Arrays;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Set;
 
-import static org.hamcrest.Matchers.*;
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+
 import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 
@@ -62,7 +60,7 @@ public class UserRepositoryIT  {
 
     private User createUserWithTwoAddress() {
         User user = new User();
-        user.setId(1);
+        user.setInn(1);
         user.setName("Vasiliy");
         user.setSurname("Pupkin");
         Set<Address> addresses = Sets.newLinkedHashSet(

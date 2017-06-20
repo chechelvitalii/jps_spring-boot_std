@@ -1,6 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-    <user id="1" name="Petr" surname="Petrov"/>
-    <user id="2" name="Ivan" surname="Ivanov"/>
-    <user id="3" name="Andrey" surname="Andreyev"/>
+    <user inn="1" name="Petr" surname="Petrov"/>
+    <user inn="2" name="Ivan" surname="Ivanov"/>
+    <user inn="3" name="Andrey" surname="Andreyev"/>
+
+    <address id="1" street="st1" build_Number="1" user_inn="1"/>
+    <address id="2" street="st2" build_Number="2" user_inn="2"/>
+    <address id="3" street="st3" build_Number="3" user_inn="3"/>
 </dataset>

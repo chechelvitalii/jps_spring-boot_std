@@ -1,11 +1,16 @@
 package com.vitaliy.hibernate.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
-import javax.persistence.*;
+import lombok.experimental.Tolerate;
 
 @Entity
 @Table
@@ -23,4 +28,8 @@ public class Address {
     private String buildNumber;
     @ManyToOne
     private User user;
+
+    @Tolerate
+    public Address() {
+    }
 }
